@@ -1,0 +1,52 @@
+{
+    "format": 0.1,
+    "catalog": [
+        {
+            "name": "mattermost",
+            "org": "mattermost",
+            "repo": "mattermost-server",
+            "helpWanted": ["Help Wanted", "Good First Issue"],
+            "firstIssue": ["Good First Issue"],
+            "languages": {
+                "go": "Tech/Go",
+                "javascript": "Tech/Javascript",
+                "typescript": "Tech/Typescript"
+            },
+            "difficulty": {
+                "easy": "Difficulty/1:Easy",
+                "medium": "Difficulty/2:Medium",
+                "hard": "Difficulty/3:Hard"
+            }
+        },
+        {
+            "name": "CockroachDB",
+            "org": "cockroachdb", /
+            "repo": "cockroach",
+            "helpWanted": ["help wanted", "good first issue"],
+            "firstIssue": ["good first issue"],
+            "languages": {
+                "go": null
+            },
+            "difficulty": {
+                "easy": "E-starter",
+                "medium": "E-easy",
+                "hard": "E-intermediate"
+            }
+        },
+        {
+            "name": "Docker CLI",
+            "org": "docker",
+            "repo": "cli",
+            "helpWanted": ["help wanted"],
+            "firstIssue": [],
+            "languages": {
+                "go": null
+            },
+            "difficulty": {
+                "easy": "exp/beginner",
+                "medium": "exp/intermediate",
+                "hard": "exp/expert"
+            }
+        }
+    ]
+}
