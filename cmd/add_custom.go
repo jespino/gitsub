@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/jespino/gitsub/catalog"
 	"github.com/jespino/gitsub/config"
 	"github.com/spf13/cobra"
 )
@@ -34,6 +35,17 @@ func addCustomCmdF(cmd *cobra.Command, args []string) {
 	name := args[0]
 	if _, ok := cfg.CustomSubscriptions[name]; ok {
 		fmt.Printf("the custom subscription %s already exists\n", name)
+		os.Exit(1)
+	}
+
+	cat, err := catalog.Read()
+	if err != nil {
+		fmt.Printf("Fatal error reading catalog: %s \n", err)
+		os.Exit(1)
+	}
+
+	if _, ok := cat.Catalog[name]; !ok {
+		fmt.Printf("Project name %s found in the catalog. Please use another name for your custom subscription.\n", name)
 		os.Exit(1)
 	}
 

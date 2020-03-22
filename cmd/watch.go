@@ -65,10 +65,7 @@ func watchCmdF(cmd *cobra.Command, args []string) {
 			}
 			owner := entry.Org
 			repo := entry.Repo
-			labels := []string{}
-			if sub.HelpWanted {
-				labels = append(labels, entry.HelpWanted...)
-			}
+			labels := entry.HelpWanted
 			if sub.FirstIssue {
 				labels = append(labels, entry.FirstIssue...)
 			}

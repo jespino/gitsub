@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"os"
 	"os/user"
 	"path"
 )
@@ -33,6 +34,14 @@ func Path() (string, error) {
 		return "", err
 	}
 	return path.Join(usr.HomeDir, ".gitsub.catalog"), nil
+}
+
+func Exists() bool {
+	catalogPath, _ := Path()
+	if _, err := os.Stat(catalogPath); os.IsNotExist(err) {
+		return false
+	}
+	return true
 }
 
 // Write write a catalog struct into the catalog file
