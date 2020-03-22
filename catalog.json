@@ -1,7 +1,7 @@
 {
-    "format": 0.1,
-    "catalog": [
-        {
+    "format": "0.1",
+    "catalog": {
+        "mattermost": {
             "name": "mattermost",
             "org": "mattermost",
             "repo": "mattermost-server",
@@ -18,9 +18,9 @@
                 "hard": "Difficulty/3:Hard"
             }
         },
-        {
+        "cockroachdb": {
             "name": "CockroachDB",
-            "org": "cockroachdb", /
+            "org": "cockroachdb",
             "repo": "cockroach",
             "helpWanted": ["help wanted", "good first issue"],
             "firstIssue": ["good first issue"],
@@ -33,7 +33,7 @@
                 "hard": "E-intermediate"
             }
         },
-        {
+        "docker-cli": {
             "name": "Docker CLI",
             "org": "docker",
             "repo": "cli",
@@ -48,5 +48,5 @@
                 "hard": "exp/expert"
             }
         }
-    ]
+    }
 }

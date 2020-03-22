@@ -3,6 +3,7 @@ package config
 import (
 	"encoding/json"
 	"io/ioutil"
+	"os"
 	"os/user"
 	"path"
 )
@@ -20,7 +21,6 @@ type Subscription struct {
 	Name         string
 	Difficulties []string
 	Languages    []string
-	HelpWanted   bool
 	FirstIssue   bool
 }
 
@@ -43,6 +43,14 @@ func Path() (string, error) {
 		return "", err
 	}
 	return path.Join(usr.HomeDir, ".gitsub.conf"), nil
+}
+
+func Exists() bool {
+	configPath, _ := Path()
+	if _, err := os.Stat(configPath); os.IsNotExist(err) {
+		return false
+	}
+	return true
 }
 
 func Write(cfg *Config) error {
